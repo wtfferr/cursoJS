@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de habilidades</title>
+    <style>
+        body {
+            font: normal 14px Arial;
+            background: #f1f1f1;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        section {
+            width: 72vw;
+            background: white;
+            padding: 24px;
+            
+        }
+
+        form {
+            margin-bottom: 32px;
+        }
+        input, button, label {
+            width: 100%;
+            margin-bottom: 8px;
+            box-sizing: border-box;
+            display: flex;
+            
+        }
+
+        input, .button {
+            border: none;
+            background: #f1f1f1;
+            border-radius: 8px;
+            
+
+            align-items: center;
+            justify-content: center;
+
+        }
+        input {
+            padding: 12px;
+        }
+
+        .button {
+            background: #977070;
+            color: #f1f1f1;
+
+            padding: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+       <div id="perguntas">
+        <form action="">
+            <label for="skill">Skills: </label>
+            <input type="text" name="skill" id="skill" placeholder="Digite uma skill">
+            <input class="button" type="button" value="Incluir" onclick="listar()">
+        </form>
+       </div> 
+       
+       <div id="respostas">
+        <h3>
+            Lista de skills:
+        </h3>
+        <p class="list"></p>
+       </div>
+        
+    </section>
+   
+
+    <script>
+
+
+        function listar() {
+            var skill = document.querySelector('input#skill').value
+            var lista = document.querySelector('p.list').innerText = skill
+            document.querySelector('input#skill').value = ""
+            document.querySelector('input#skill').placeholder = "Digite mais"
+        
+        }
+
+        
+
+    </script>
+</body>
+</html>

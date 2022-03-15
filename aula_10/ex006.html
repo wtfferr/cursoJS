@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background: rgb(193, 216, 193);
+            color: white;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            box-shadow: 1px 1px 5px rgb(230, 230, 230);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Interaja...
+    </div>
+
+    <script>
+        var a = document.querySelector('div#area')
+        var b = document.querySelector('body')
+
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+
+        function clicar() {
+            a.innerHTML = 'Clicou!'
+            a.style.background = "#e5afaf"
+            a.style.boxShadow = "rgb(199 199 199) 4px 4px 12px"
+
+        }
+
+        function entrar() {
+            a.innerHTML = 'Dentro...'
+            a.style.background = "rgb(193, 216, 193)"
+            a.style.boxShadow = "1px 1px 4px rgb(230, 230, 230)"
+        }
+
+        function sair() {
+            a.innerHTML = 'Fora...'
+            a.style.background = "rgb(193, 216, 193)"
+            a.style.boxShadow = "1px 1px 4px rgb(230, 230, 230)"
+            
+        }
+    </script>
+</body>
+</html>

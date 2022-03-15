@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Numeros</title>
+    <style>
+        body {
+            font: normal .8em Arial;
+            background: #f1f1f1;
+            padding: 24px 32px;
+        }
+        input {
+            border: none;
+            font-size: 1.4em;
+            width: 72px;
+            padding: 8px;
+            border-radius: 8px;
+            margin-right: 8px;
+        }
+
+        .button {
+            
+            width: 40px;
+            background: #977070;
+            color: #f1f1f1;
+            
+        }
+
+        .plus {
+            background: #f1f1f1;
+            color: #977070;
+            
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> 
+    <input class="button plus" type="button" value="+">
+    <input type="number" name="txtn2" id="txtn2">
+    <input class="button" type="button" value="=" onclick="somar()">
+    
+    <input type="number" name="resultado" id="resultado" value="" placeholder="0" readonly>
+
+    <script>
+
+        function somar() {
+            var tn1 = document.querySelector('input#txtn1')
+            var tn2 = document.querySelector('input#txtn2')
+            var res = document.querySelector('input#resultado')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value) 
+            var s = n1 + n2
+            res.value = s
+            
+        }
+    </script>
+
+</body>
+</html>

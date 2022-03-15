@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desmotivacionando</title>
+    <style>
+         body {
+            font: normal .8em Arial;
+            background: #f1f1f1;
+            padding: 24px 32px;
+        }
+
+        section {
+            width: 72vw;
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 14px;
+            font-weight: 100;
+            width: 100%;
+        }
+
+        ul, li {
+            display: flex;
+            width: 100%;  
+        }
+
+        ul {
+            justify-content: space-between;
+            padding: 0;
+            border-bottom: 1px solid #977070;
+            cursor: pointer;
+        }
+
+        li {
+            justify-content: center;
+            padding: 32px;
+            width: 96px;
+            padding: 8px;
+            color: #977070;
+        }
+
+        .frase {
+            height: 48px;
+        }
+
+        .botao {
+            border: none;
+            padding: 8px 16px;
+            width: 240px;
+            border-radius: 4px;
+            background: #977070;
+            color: #f1f1f1;
+            margin-top: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+   <section>
+
+    <h1>Frases do dia</h1>
+    <h3>Aqui está a dose de motivação que você precisa hoje:</h3>
+    <ul>
+        <li onclick="selecionar1()">Determinação</li>
+        <li onclick="selecionar2()">Coragem</li>
+        <li onclick="selecionar3()">Esperança</li>
+    </ul>
+
+    <div class="frase"></div>
+
+    <input class="botao" type="button" value="Apaga essa porra" style="opacity: 0;" onclick="limpar()">
+   </section> 
+
+   <script>
+       var li1 = document.getElementsByTagName('li')[0]
+       var li2 = document.getElementsByTagName('li')[1]
+       var li3 = document.getElementsByTagName('li')[2]
+
+       var desmotiva = document.querySelector('div.frase')
+
+       var butao = document.querySelector('input.botao')
+
+       function selecionar1() {
+        
+        li1.style.fontWeight = "bold"
+        li1.style.borderBottom = "1px solid #977070"
+        desmotiva.innerHTML = "Se voce quiser, se você se esforçar, se você treinar, se você entrar de cabeça, se você se concentrar: <b>NADA garante que você vai conseguir</b>"
+
+        li2.style.fontWeight = "100"
+        li2.style.borderBottom = "none"
+
+        li3.style.fontWeight = "100"
+        li3.style.borderBottom = "none"
+
+        butao.style.opacity = "1"
+        butao.value ="Ta me dando gatilho, apaga"
+       }
+
+       function selecionar2() {
+
+        li2.style.fontWeight = "bold"
+        li2.style.borderBottom = "1px solid #977070"
+        desmotiva.innerText = "Eu topei o desafio é a frase que sempre precede as piores decisões da humanidade"
+
+        li1.style.fontWeight = "100"
+        li1.style.borderBottom = "none"
+
+        li3.style.fontWeight = "100"
+        li3.style.borderBottom = "none"
+
+        butao.style.opacity = "1"
+        butao.value ="Apaga essa porra"
+        }
+
+        function selecionar3() {
+        li3.style.fontWeight = "bold"
+        li3.style.borderBottom = "1px solid #977070"
+        desmotiva.innerText = "A esperança é um sentimento mais nocivo que tem para qualquer ser humano, porque mantém você sofrendo por algo que nunca vai conseguir"
+
+        li1.style.fontWeight = "100"
+        li1.style.borderBottom = "none"
+
+        li2.style.fontWeight = "100"
+        li2.style.borderBottom = "none"
+
+        butao.style.opacity = "1"
+        butao.value ="Chega, tira isso"
+        }
+
+        function limpar() {
+
+        li1.style.fontWeight = "100"
+        li1.style.borderBottom = "none"
+        
+        desmotiva.innerHTML = ""
+
+        li2.style.fontWeight = "100"
+        li2.style.borderBottom = "none"
+
+        li3.style.fontWeight = "100"
+        li3.style.borderBottom = "none"
+
+        butao.style.opacity = "0"
+        }
+   </script>
+    
+</body>
+</html>

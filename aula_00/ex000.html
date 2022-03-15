@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            margin: 8vh 16vh;
+            background-color: rgb(144, 144, 206);
+            color: white;
+            font: normal 20px Arial;
+        }
+        h1 {
+            color: rgb(231, 255, 146);
+        }
+       
+    </style>
+    <script>
+        var nome = window.prompt('Qual seu nome?')
+        var camisa = Number(window.prompt('Qual o valor da camisa?')) 
+        var estampa = Number(window.prompt('Qual o valor da estampa?')) 
+        var total = (camisa + estampa)*1.5
+        var total2 = (camisa + estampa)*2
+
+        var finalPrice = total2 < 75 ? total2 : total 
+        var reasonPhrase = finalPrice < 85 ? 'Tá bom.' : 'Muito caro.'
+        
+        var finalPriceInt = Math.round(finalPrice)
+         
+
+    </script>
+    <h1>Bom dia, <script>document.write(`${nome}`)</script>.</h1>
+
+    <script>
+        document.write(`O valor total da camisa é ${total.toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })} com lucro de 50% e ${total2.toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })} com lucro de 100%. `)
+        document.write("<br> <br>");
+        document.write(`Vai dar ${finalPrice.toLocaleString("pt-BR", { minimumFractionDigits: 0 , style: 'currency', currency: 'BRL' })}.`)
+         document.write("<br> <br>");
+        if (finalPrice % 1 != 0 ) {
+            document.write (`Vamos arredondar pra R$ ${finalPriceInt}.`)
+        }
+    </script>
+    <br>
+    <h2>Bora fechá?</h2>
+
+    <script>
+        if (finalPrice > 100) {
+            document.write(`- Não vai rolar... ${reasonPhrase}`)
+        } else {
+            document.write(`- Bora! ${reasonPhrase}`)
+        }
+
+        
+    </script>
+
+   
+    
+
+</body>
+</html>
